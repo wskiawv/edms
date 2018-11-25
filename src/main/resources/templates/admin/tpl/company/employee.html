@@ -1,0 +1,18 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3"><span translate="aside.nav.company.employee">employee</span></h1>
+</div>
+<div class="wrapper-md" ng-controller="EmployeeCtrl">
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <!--<span translate="aside.nav.company.news">news</span>-->
+      <button class="btn btn-primary" ng-click="add()"><i class="icon-magnifier-add"></i><span translate="button.add">add</span></button>
+      <button class="btn btn-success" ng-click="edit()"><i class="fa fa-edit"></i><span translate="button.edit">edit</span></button>
+      <button class="btn btn-danger" ng-click="remove()"><i class="fa fa-trash-o"></i><span translate="button.remove">remove</span></button>
+      <button class="btn btn-info btn-addon" ng-click="show()"><i class="icon-magnifier"></i><span translate="button.show">show</span></button>
+    </div>
+    <div class="table-responsive">
+      <div ng-grid="grid" style="min-height:620px"></div>
+    </div>
+  </div>
+</div>

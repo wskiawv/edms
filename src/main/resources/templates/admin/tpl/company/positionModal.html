@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+        &times;
+    </button>
+    <h3 class="modal-title"><span translate="aside.nav.company.position">position</span></h3>
+</div>
+<div class="modal-body">
+   <div class="row">    
+          <form role="form" class="ng-pristine ng-valid">
+            <div class="form-group">
+              <label class="col-lg-2 control-label"><span translate="model.company.news.title">title</span></label>
+              <div class="col-lg-10">
+                <input type="text" ng-model="news.title" class="form-control" value="{{news.title}}">               
+              </div>
+            </div>            
+            <div class="form-group">
+            	<label class="col-lg-2 control-label"><span translate="model.company.news.content">content</span></label>
+            	<div class="wrapper-md">
+				  <div lazy-load="textAngular">
+				    <div text-angular ng-model="news.content" class="btn-groups"></div>
+				  </div>
+				</div>
+            </div>     
+          </form>      
+   </div>
+   
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i><span translate="button.save">save</span></button>
+    <button class="btn btn-success" ng-click="reset()"><i class="icon-action-redo"></i><span translate="button.reset">reset</span></button>    
+    <button class="btn btn-default" ng-click="cancel()"><i class="glyphicon glyphicon-remove-circle"></i><span translate="button.cancel">cancel</span></button>
+</div>

@@ -1,0 +1,193 @@
+<!-- navbar -->
+<div data-ng-include=" 'tpl/blocks/header.index.html' " class="app-header navbar">
+</div>
+<!-- / navbar -->
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../../../js/customer/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="../../../js/customer/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../../js/customer/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="../../../js/customer/css/templatemo_style.css" rel="stylesheet" type="text/css">	
+	<title>登录</title>
+	<!-- <script type="text/javascript" src="../../../js/customer/js/jquery-1.11.1.min.js"></script> -->
+	<script type="text/javascript" src="../../../js/customer/js/jquery.validate.min.js"></script>	
+	<script type="text/javascript" src="../../../js/customer/js/login-validate.js"></script>	
+	<script>
+		function getRootPath(){
+			var strFullPath=window.document.location.href;
+			var strPath=window.document.location.pathname;
+			var pos=strFullPath.indexOf(strPath);
+			var prePath=strFullPath.substring(0,pos);
+			var postPath=strPath.substring(0,strPath.substr(1).indexOf('/')+1);
+			return(postPath);
+		}
+
+		alert (getRootPath());
+		var path = window.location.pathname;
+		var host = window.location.host;
+		alert(host);
+		alert(path);
+		$(document).ready(function(){		
+			FormValidation.init();	
+			
+			
+		});
+		function studentRadioClcik(o){
+			var studentUrl="student/Students/login";
+			$('#loginForm').attr("action",studentUrl);
+		}
+		function customerRadioClcik(o){
+			var customerUrl="customer/Customers/login";
+			$('#loginForm').attr("action",customerUrl);
+		}
+		function teacherRadioClcik(o){
+			var teacherUrl="teacher/Teachers/login";
+			$('#loginForm').attr("action",teacherUrl);
+		}
+		function login(){
+			var studentUrl = "student/Students/login";
+			var customerUrl="customer/Customers/login";
+			var teacherUrl="teacher/Teachers/login";
+			
+			var student=$('#student').is(":checked");
+			var customer=$('#customer').is(":checked");
+			var teacher=$('#teacher').is(":checked");
+			if(customer){
+				$('#loginForm').attr("action",customerUrl);			
+			}
+			if(student){			
+				$('#loginForm').attr("action",studentUrl);			
+			}
+			if(teacher){
+				$('#loginForm').attr("action",teacherUrl);	
+			}
+			var data=$("#loginForm").serialize();
+			var url=$('#loginForm').attr("action");
+			var ret=false;
+			$.ajax({
+				   type: "POST",
+				   url : url,
+				   data: data,
+				   async : false ,
+				   dataType : 'json',
+				   success: function(data){
+					   if(data){
+						   if(data.success == true){
+							  ret =true ;    
+							  $('#msg').css("color","green");
+							  $('#msg').html(data.msg);
+							  if(student){
+								  window.location.href="index.jsp";
+							  }else if(customer){
+								  window.location.href="index.jsp";
+							  }else if(teacher){
+								  window.location.href="init";
+							  }
+							  
+						   }else if(data.success == false){
+							   $('#msg').css("color","red");
+							   $('#msg').html(data.msg);							   
+						   }
+					   }else{
+						   $('#msg').css("color","red");
+						   $('#msg').html("请求服务失败，请联系系统管理员！");						  
+					   }
+				   },
+				   error:function(XMLHttpRequest,textStatus,errorThrown){
+					   $('#msg').css("color","red");
+					   $('#msg').html("请求服务失败，请联系系统管理员！");				  
+				   }
+				});			
+		}		
+	 
+	</script>
+</head>
+<body class="templatemo-bg-gray">
+	<div class="container">
+		<div class="col-md-12">
+			<h1 class="margin-bottom-15">学习平台登录</h1>
+			<form id="loginForm" class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="student/Students/login" method="post">				
+		       	 <div class="form-group">
+		          <div class="col-xs-12">		            
+		            <div class="control-wrapper">
+		            	<span id="msg" style="color:red"></span>
+		            	<span style="color:red">${msg.msg}</span>
+		            </div>		            	            
+		          </div>              
+		        </div>
+		        <div class="form-group">
+		          <div class="col-xs-12">		            
+		            <div class="control-wrapper">
+		            	<label for="loginName" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
+		            	<input type="text" class="form-control" name="loginName"  placeholder="用户名、学号、手机、邮箱">
+		            </div>		            	            
+		          </div>              
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		            	<label for="pwd" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
+		            	<input type="password" class="form-control" name="pwd"  placeholder="密码">
+		            </div>
+		          </div>
+		        </div>
+		         <div class="form-group">			          
+			          <div class="col-xs-12">
+			          <div class="control-wrapper">
+			          	<label for="" class="control-label fa-label"><i></i></label>
+			          	
+			          	<label class="radio-inline">
+		          			<input type="radio" onclick="teacherRadioClcik(this)" checked="checked" name="role" id="teacher" value="1">老师
+		          		</label>
+		          		
+			          	<label class="radio-inline">
+		          			<input type="radio"   onclick="studentRadioClcik(this)" name="role" id="student" value="2"> 学生
+		          		</label>
+		          		
+		          		<label class="radio-inline">
+		          			<input type="radio" name="role" onclick="customerRadioClcik(this)" id="customer" value="3"> 社会人员
+		          		</label>
+		          	  </div>		          		
+			          </div>             
+			        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+	             	<div class="checkbox control-wrapper">
+	                	<label>
+	                  		<input type="checkbox"> 记住
+                		</label>
+	              	</div>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		          		<input type="submit" value="登陆" class="btn btn-info">
+		          		<a href="forgetPassword.jsp" class="text-right pull-right">忘记密码?</a>
+		          	</div>
+		          </div>
+		        </div>
+		        <hr>
+		        <div class="form-group">
+		        	<div class="col-md-12">
+		        		<label>其他登录: </label>
+		        		<div class="inline-block">
+		        			<a href="#"><i class="fa fa-facebook-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-twitter-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-google-plus-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-tumblr-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-github-square login-with"></i></a>
+		        		</div>		        		
+		        	</div>
+		        </div>
+		      </form>
+		      <div class="text-center">
+		      	<a href="register.jsp" class="templatemo-create-new">注册 <i class="fa fa-arrow-circle-o-right"></i></a>	
+		      </div>
+		</div>
+	</div>
+</body>
+</html>
+

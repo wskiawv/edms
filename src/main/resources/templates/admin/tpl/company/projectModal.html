@@ -1,0 +1,119 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+        &times;
+    </button>
+    <h3 class="modal-title"><span translate="aside.nav.company.project">project</span></h3>
+</div>
+<div class="modal-body">
+   <div class="row">    
+          <form role="form" class="ng-pristine ng-valid">
+            <div class="col-md-12">
+              <label class="col-sm-2 control-label"><span translate="model.company.project.name">name</span></label>
+              <div class="col-sm-10">
+                <input type="text" ng-model="project.name" class="form-control" value="{{project.name}}">
+              </div>
+            </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.img">img</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.img" class="form-control" value="{{project.img}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.video">video</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.video" class="form-control" value="{{project.video}}">
+                  </div>
+              </div>
+
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.trialUrl">trialUrl</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.trialUrl" class="form-control" value="{{project.trialUrl}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.deve_time">deve_time</span></label>
+                  <div class="col-sm-10">
+                      <p class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="project.deve_time" is-open="opened"  ng-required="true" close-text="关闭" clear-text="清空" current-text="今天" required="required">
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                      </p>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.end_time">end_time</span></label>
+                  <div class="col-sm-10">
+                      <p class="input-group">
+                      <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="project.end_time" is-open="end_time_opened"  ng-required="true" close-text="关闭" clear-text="清空" current-text="今天" required="required">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="end_time_open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                      </p>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.register_date">register_date</span></label>
+                  <div class="col-sm-10">
+                      <p class="input-group">
+                          <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="project.register_date" is-open="register_date_opened"  ng-required="true" close-text="关闭" clear-text="清空" current-text="今天" required="required">
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="register_date_open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                      </p>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.validity_date">validity_date</span></label>
+                  <div class="col-sm-10">
+                      <p class="input-group">
+                          <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="project.validity_date" is-open="validity_date_opened"  ng-required="true" close-text="关闭" clear-text="清空" current-text="今天" required="required">
+                          <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="validity_date_open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                      </p>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.copyrightImg">copyrightImg</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.copyrightImg" class="form-control" value="{{project.copyrightImg}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.register_number">register_number</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.register_number" class="form-control" value="{{project.register_number}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.price">price</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.price" class="form-control" value="{{project.price}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.remarks">remarks</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="project.remarks" class="form-control" value="{{project.remarks}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.project.introduction">introduction</span></label>
+                  <div class="wrapper-md">
+                      <div lazy-load="textAngular">
+                          <div text-angular ng-model="project.introduction" class="btn-groups"></div>
+                      </div>
+                  </div>
+              </div>
+          </form>      
+   </div>
+   
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i><span translate="button.save">save</span></button>
+    <button class="btn btn-success" ng-click="reset()"><i class="icon-action-redo"></i><span translate="button.reset">reset</span></button>    
+    <button class="btn btn-default" ng-click="cancel()"><i class="glyphicon glyphicon-remove-circle"></i><span translate="button.cancel">cancel</span></button>
+</div>

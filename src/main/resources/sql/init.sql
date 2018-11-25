@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2018-11-23 17:21:52
+Date: 2018-11-25 22:33:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,6 +22,8 @@ DROP TABLE IF EXISTS `t_attachment`;
 CREATE TABLE `t_attachment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `storage_type` varchar(255) DEFAULT NULL,
+  `table_pk` int(11) DEFAULT NULL,
+  `table_name` varchar(300) DEFAULT NULL,
   `att_name` varchar(255) DEFAULT NULL,
   `att_size` int(11) DEFAULT NULL,
   `att_path` varchar(255) DEFAULT NULL,
@@ -38,11 +40,32 @@ CREATE TABLE `t_attachment` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `t_catalog`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_catalog`;
+CREATE TABLE `t_catalog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `catalog_name` varchar(200) DEFAULT NULL,
+  `pid` int(11) DEFAULT NULL,
+  `iconCls` varchar(200) DEFAULT NULL,
+  `leaf` bit(1) DEFAULT NULL,
+  `qtip` varchar(200) DEFAULT NULL,
+  `text` varchar(200) DEFAULT NULL,
+  `node_sort` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_catalog
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `t_document`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_document`;
 CREATE TABLE `t_document` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `document_code` varchar(200) DEFAULT NULL,
   `document_name` varchar(255) DEFAULT NULL,
   `document_title` varchar(255) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
@@ -55,6 +78,24 @@ CREATE TABLE `t_document` (
 
 -- ----------------------------
 -- Records of t_document
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `t_flatcode`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_flatcode`;
+CREATE TABLE `t_flatcode` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `category` varchar(255) DEFAULT NULL,
+  `categoryName` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_flatcode
 -- ----------------------------
 
 -- ----------------------------

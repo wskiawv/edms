@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szlhsoft.dao.CatalogMapper" >
+  <resultMap id="BaseResultMap" type="com.szlhsoft.model.Catalog" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="catalog_name" property="catalogName" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="iconCls" property="iconcls" jdbcType="VARCHAR" />
+    <result column="leaf" property="leaf" jdbcType="BIT" />
+    <result column="qtip" property="qtip" jdbcType="VARCHAR" />
+    <result column="text" property="text" jdbcType="VARCHAR" />
+    <result column="node_sort" property="nodeSort" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, catalog_name, pid, iconCls, leaf, qtip, text, node_sort
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_catalog
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_catalog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.szlhsoft.model.Catalog" >
+    insert into t_catalog (id, catalog_name, pid, 
+      iconCls, leaf, qtip, text, 
+      node_sort)
+    values (#{id,jdbcType=INTEGER}, #{catalogName,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
+      #{iconcls,jdbcType=VARCHAR}, #{leaf,jdbcType=BIT}, #{qtip,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR}, 
+      #{nodeSort,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.szlhsoft.model.Catalog" >
+    insert into t_catalog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="catalogName != null" >
+        catalog_name,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="iconcls != null" >
+        iconCls,
+      </if>
+      <if test="leaf != null" >
+        leaf,
+      </if>
+      <if test="qtip != null" >
+        qtip,
+      </if>
+      <if test="text != null" >
+        text,
+      </if>
+      <if test="nodeSort != null" >
+        node_sort,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="catalogName != null" >
+        #{catalogName,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="iconcls != null" >
+        #{iconcls,jdbcType=VARCHAR},
+      </if>
+      <if test="leaf != null" >
+        #{leaf,jdbcType=BIT},
+      </if>
+      <if test="qtip != null" >
+        #{qtip,jdbcType=VARCHAR},
+      </if>
+      <if test="text != null" >
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeSort != null" >
+        #{nodeSort,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.szlhsoft.model.Catalog" >
+    update t_catalog
+    <set >
+      <if test="catalogName != null" >
+        catalog_name = #{catalogName,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="iconcls != null" >
+        iconCls = #{iconcls,jdbcType=VARCHAR},
+      </if>
+      <if test="leaf != null" >
+        leaf = #{leaf,jdbcType=BIT},
+      </if>
+      <if test="qtip != null" >
+        qtip = #{qtip,jdbcType=VARCHAR},
+      </if>
+      <if test="text != null" >
+        text = #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeSort != null" >
+        node_sort = #{nodeSort,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.szlhsoft.model.Catalog" >
+    update t_catalog
+    set catalog_name = #{catalogName,jdbcType=VARCHAR},
+      pid = #{pid,jdbcType=INTEGER},
+      iconCls = #{iconcls,jdbcType=VARCHAR},
+      leaf = #{leaf,jdbcType=BIT},
+      qtip = #{qtip,jdbcType=VARCHAR},
+      text = #{text,jdbcType=VARCHAR},
+      node_sort = #{nodeSort,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

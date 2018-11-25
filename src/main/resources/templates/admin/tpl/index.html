@@ -1,0 +1,73 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+</head>
+<body>
+<!-- navbar -->
+<div data-ng-include=" 'tpl/blocks/header.index.html' "
+	class="app-header navbar"></div>
+ <!-- menu -->
+  <div data-ng-include=" 'tpl/blocks/aside.index.html' " class="app-aside hidden-xs {{app.settings.asideColor}}">
+  </div>
+  <!-- / menu -->
+ <!-- carousel -->
+ <div class="container">
+ 
+ </div>
+<div class="container">
+	<div class="row">
+		<!-- <div class="col-md-2">
+			<div class="panel b-a">
+				<div class="panel-heading no-border bg-primary">
+					<span class="text-lt">java</span>
+				</div>
+				<div class="panel-body"></div>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="panel b-a">
+				<div class="panel-heading no-border bg-primary">
+					<span class="text-lt">hadoop</span>
+				</div>
+				<div class="panel-body"></div>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="panel b-a">
+				<div class="panel-heading no-border bg-primary">
+					<span class="text-lt">spring mvc</span>
+				</div>
+				<div class="panel-body"></div>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="panel b-a">
+				<div class="panel-heading no-border bg-primary">
+					<span class="text-lt">ExtJs</span>
+				</div>
+				<div class="panel-body"></div>
+			</div>
+		</div> -->
+		<!-- <div class="col-md-2">
+			<div class="panel b-a">
+				<div class="panel-heading no-border bg-primary">
+					<span class="text-lt">英语</span>
+				</div>
+				<div class="panel-body">
+				
+				
+				</div>
+			</div>
+		</div> -->
+	</div>
+	 <!-- footer -->
+	  <div class="app-footer wrapper b-t bg-light">
+	    <span class="pull-right">{{app.version}} <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+	    &copy; 2017 Copyright.
+	  </div>
+	  <!-- / footer -->
+	<div data-ng-include=" 'tpl/blocks/settings.html' " class="settings panel panel-default"></div>
+</div>
+</body>
+</html>
+

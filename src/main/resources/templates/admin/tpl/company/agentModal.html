@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+        &times;
+    </button>
+    <h3 class="modal-title"><span translate="aside.nav.company.agent">agent</span></h3>
+</div>
+<div class="modal-body">
+   <div class="row">    
+          <form role="form" class="ng-pristine ng-valid">
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.agent.name">name</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="agent.name" class="form-control" value="{{agent.name}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.agent.company">company</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="agent.companyId" class="form-control" value="{{agent.companyId}}">
+                  </div>
+              </div>
+          </form>      
+   </div>
+   
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i><span translate="button.save">save</span></button>
+    <button class="btn btn-success" ng-click="reset()"><i class="icon-action-redo"></i><span translate="button.reset">reset</span></button>    
+    <button class="btn btn-default" ng-click="cancel()"><i class="glyphicon glyphicon-remove-circle"></i><span translate="button.cancel">cancel</span></button>
+</div>

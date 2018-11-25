@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+        &times;
+    </button>
+    <h3 class="modal-title"><span translate="aside.nav.company.solution">solution</span></h3>
+</div>
+<div class="modal-body">
+   <div class="row">    
+          <form role="form" class="ng-pristine ng-valid">
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.solution.name">name</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="solution.name" class="form-control" value="{{solution.name}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.solution.pdf">pdf</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="solution.pdf" class="form-control" value="{{solution.pdf}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.solution.video">video</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="solution.video" class="form-control" value="{{solution.video}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.solution.remarks">remarks</span></label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="solution.remarks" class="form-control" value="{{solution.remarks}}">
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-sm-2 control-label"><span translate="model.company.solution.introduce">introduce</span></label>
+                  <div class="wrapper-md">
+                      <div lazy-load="textAngular">
+                          <div text-angular ng-model="solution.introduce" class="btn-groups"></div>
+                      </div>
+                  </div>
+              </div>   
+          </form>      
+   </div>
+   
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i><span translate="button.save">save</span></button>
+    <button class="btn btn-success" ng-click="reset()"><i class="icon-action-redo"></i><span translate="button.reset">reset</span></button>    
+    <button class="btn btn-default" ng-click="cancel()"><i class="glyphicon glyphicon-remove-circle"></i><span translate="button.cancel">cancel</span></button>
+</div>
