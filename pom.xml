@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>edms</name>
-	<description>Demo project for Spring Boot</description>
+	<description>edms project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -99,11 +99,11 @@
 			<version>0.8.0</version>
 		</dependency>
 		<!--mybatis分页插件-->
-		<dependency>
+		<!--<dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.1.0</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>

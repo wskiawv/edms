@@ -21,7 +21,7 @@ app.controller('AlertCtrl', ['$scope', '$modal', '$log', function($scope, $modal
     }
     $scope.open = function (size) {
       var modalInstance = $modal.open({
-        templateUrl: 'tpl/msg/alert.html',
+        templateUrl: 'admin/tpl/msg/alert.html',
         controller: 'MsgInstanceCtrl',
         size: size,
         resolve: {
@@ -45,7 +45,7 @@ app.controller('ConfirmCtrl', ['$scope', '$modal', '$log', function($scope, $mod
     }
     $scope.open = function (size) {
       var modalInstance = $modal.open({
-        templateUrl: 'tpl/msg/confirm.html',
+        templateUrl: 'admin/tpl/msg/confirm.html',
         controller: 'MsgInstanceCtrl',
         size: size,
         resolve: {

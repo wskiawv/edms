@@ -1,6 +1,6 @@
 'use strict';
 
-var appPath="/erp";
+var appPath="";
 angular.module('app', [
     'ngAnimate',
     'ngCookies',
