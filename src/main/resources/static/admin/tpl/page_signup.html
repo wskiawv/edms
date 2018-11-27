@@ -1,5 +1,5 @@
     <!-- navbar -->
-<div data-ng-include=" 'tpl/blocks/header.index.html' " class="app-header navbar">
+<div data-ng-include=" 'admin/tpl/blocks/header.index.html' " class="app-header navbar">
 </div>
     <div class="container w-xxl w-auto-xs" ng-controller="SignupFormController" ng-init="app.settings.container = false;">
       <a href class="navbar-brand block m-t">{{app.name}}</a>
@@ -33,5 +33,5 @@
           <a ui-sref="access.signin" class="btn btn-lg btn-default btn-block">Sign in</a>
         </form>
       </div>
-      <div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>
+      <div class="text-center" ng-include="'admin/tpl/blocks/page_footer.html'"></div>
     </div>

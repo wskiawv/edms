@@ -11,7 +11,7 @@ angular.module('app').controller('AppCtrl', ['$scope', '$translate', '$localStor
 
       // config
       $scope.app = {
-        name: 'Angulr',
+        name: '电子档案管理系统',
         version: '1.3.3',
         // for chart colors
         color: {
