@@ -185,7 +185,36 @@
                 "create_date":"create_date",
                 "update_by":"update_by",
                 "update_date":"update_date"
-            }
+            },
+            "storage": {
+                "storage_name":"storage_name",
+                "config_file":"config_file",
+                "storage_type":"storage_type",
+                "description":"description"
+            },
+            "document":{
+                "document_code":"document_code",
+                "document_name":"document_name",
+                "document_title":"document_title",
+                "description":"description",
+                "create_date":"create_date",
+                "create_by":"create_by",
+                "last_update_date":"last_update_date",
+                "last_update_by":"last_update_by"
+            },
+            "attachment":{
+                 "storage_type":"storage_type",
+                 "table_pk":"table_pk",
+                 "table_name":"table_name",
+                 "att_name":"att_name",
+                 "att_size":"att_size",
+                 "att_path":"att_path",
+                 "att_type":"att_type",
+                 "create_date":"create_date",
+                 "create_by":"create_by",
+                 "last_update_date":"last_update_date",
+                 "last_update_by":"last_update_by"
+             }
 		}
 	},
     "button":{

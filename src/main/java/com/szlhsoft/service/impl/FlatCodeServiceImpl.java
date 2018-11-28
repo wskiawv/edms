@@ -7,6 +7,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+/**
+*@Author: he
+*@Description
+*@Date:2018/11/28 23:19
+*@Modify
+**/
 @Service
 public class FlatCodeServiceImpl implements IFlatCodeService {
     @Override

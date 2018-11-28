@@ -185,7 +185,36 @@
                 "create_date":"创建时间",
                 "update_by":"更新人",
                 "update_date":"更新时间"
-            }
+            },
+            "storage": {
+                "storage_name":"存储名称",
+                "config_file":"配置文件",
+                "storage_type":"存储类型",
+                "description":"描述"
+            },
+            "document":{
+                "document_code":"编号",
+                "document_name":"配置文件",
+                "document_title":"存储类型",
+                "description":"描述",
+                "create_date":"创建日期",
+                "create_by":"创建人",
+                "last_update_date":"更新日期",
+                "last_update_by":"更新人"
+            },
+             "attachment":{
+                 "storage_type":"存储类型",
+                 "table_pk":"外键",
+                 "table_name":"表名",
+                 "att_name":"附件名",
+                 "att_size":"附件大小",
+                 "att_path":"附件路径",
+                 "att_type":"附件类型",
+                 "create_date":"创建日期",
+                 "create_by":"创建人",
+                 "last_update_date":"更新日期",
+                 "last_update_by":"更新人"
+             }
         }
 	},	
     "button":{

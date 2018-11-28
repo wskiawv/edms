@@ -5,6 +5,12 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+/**
+*@Author: he
+*@Description
+*@Date:2018/11/28 23:20
+*@Modify
+**/
 @EnableScheduling
 @SpringBootApplication
 @EnableAutoConfiguration
