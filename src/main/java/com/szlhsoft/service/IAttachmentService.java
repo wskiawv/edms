@@ -1,9 +1,13 @@
 package com.szlhsoft.service;
+
+import com.szlhsoft.core.service.BaseServiceI;
+import com.szlhsoft.model.Attachment;
+
 /**
 *@Author: he
 *@Description
 *@Date:2018/11/28 23:20
 *@Modify
 **/
-public interface IAttachmentService {
+public interface IAttachmentService extends BaseServiceI<Attachment> {
 }

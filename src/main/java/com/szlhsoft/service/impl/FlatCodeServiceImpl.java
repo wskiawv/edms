@@ -1,6 +1,7 @@
 package com.szlhsoft.service.impl;
 
 import com.szlhsoft.core.model.Page;
+import com.szlhsoft.core.model.PageBean;
 import com.szlhsoft.model.FlatCode;
 import com.szlhsoft.service.IFlatCodeService;
 import org.springframework.stereotype.Service;
@@ -36,12 +37,37 @@ public class FlatCodeServiceImpl implements IFlatCodeService {
     }
 
     @Override
+    public PageBean<FlatCode> find(Map params) {
+        return null;
+    }
+
+    @Override
     public List<FlatCode> exportData(Map params) {
         return null;
     }
 
     @Override
     public void importData(List<FlatCode> list) {
+
+    }
+
+    @Override
+    public FlatCode save(FlatCode o) {
+        return null;
+    }
+
+    @Override
+    public void delete(FlatCode o) {
+
+    }
+
+    @Override
+    public FlatCode update(FlatCode o) {
+        return null;
+    }
+
+    @Override
+    public void delete(Integer id) {
 
     }
 }

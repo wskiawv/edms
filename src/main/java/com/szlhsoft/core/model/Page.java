@@ -2,7 +2,10 @@ package com.szlhsoft.core.model;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+* create by he 2018/11/29 10:46
+* extjs分页
+**/
 public class Page<T> implements java.io.Serializable{
 	public static final String ASC = "asc";
 	public static final String DESC = "desc";

@@ -1,8 +1,9 @@
 package com.szlhsoft.dao;
 
+import com.szlhsoft.core.dao.BaseDaoI;
 import com.szlhsoft.model.User;
 
-public interface UserMapper {
+public interface UserMapper extends BaseDaoI<User> {
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

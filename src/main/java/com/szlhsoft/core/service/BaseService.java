@@ -1,6 +1,7 @@
 package com.szlhsoft.core.service;
 
 import com.szlhsoft.core.model.Page;
+import com.szlhsoft.core.model.PageBean;
 
 import java.util.List;
 import java.util.Map;
@@ -15,12 +16,37 @@ public class BaseService implements BaseServiceI {
     }
 
     @Override
+    public PageBean find(Map params) {
+        return null;
+    }
+
+    @Override
     public List exportData(Map params) {
         return null;
     }
 
     @Override
     public void importData(List list) {
+
+    }
+
+    @Override
+    public Object save(Object o) {
+        return o;
+    }
+
+    @Override
+    public void delete(Object o) {
+
+    }
+
+    @Override
+    public Object update(Object o) {
+        return o;
+    }
+
+    @Override
+    public void delete(Integer id) {
 
     }
 

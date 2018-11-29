@@ -1,8 +1,9 @@
 package com.szlhsoft.dao;
 
+import com.szlhsoft.core.dao.BaseDaoI;
 import com.szlhsoft.model.Resources;
 
-public interface ResourcesMapper {
+public interface ResourcesMapper extends BaseDaoI<Resources> {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Resources record);
