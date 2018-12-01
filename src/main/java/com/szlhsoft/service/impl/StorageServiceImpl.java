@@ -35,7 +35,19 @@ public class StorageServiceImpl implements IStorageService {
 
     @Override
     public PageBean<Storage> find(Map params) {
-        return null;
+        Long count=storageDao.count(params);
+        List<Storage> list=storageDao.find(params);
+        Integer pageSize= (Integer) params.get("pageSize");
+        Integer page= (Integer) params.get("currentPage");
+        int totalPage = PageBean.countTotalPage(pageSize, Integer.valueOf(count.toString()));
+        PageBean pageBean = new PageBean();
+        pageBean.setPageSize(pageSize);
+        pageBean.setCurrentPage(page);
+        pageBean.setAllRow(Integer.valueOf(count.toString()));
+        pageBean.setTotalPage(totalPage);
+        pageBean.setList(list);
+        pageBean.init();
+        return pageBean;
     }
 
     @Override
@@ -50,21 +62,23 @@ public class StorageServiceImpl implements IStorageService {
 
     @Override
     public Storage save(Storage o) {
-        return null;
+        storageDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(Storage o) {
-
+        storageDao.delete(o);
     }
 
     @Override
     public Storage update(Storage o) {
-        return null;
+        storageDao.update(o);
+        return o;
     }
 
     @Override
     public void delete(Integer id) {
-
+        storageDao.deleteByPrimaryKey(id);
     }
 }

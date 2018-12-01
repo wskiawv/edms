@@ -1,5 +1,7 @@
 package com.szlhsoft.controller;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
+import com.szlhsoft.core.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 /**
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 *@Modify
 **/
 @Controller
-public class AppController {
+public class AppController extends BaseController {
     /**
      * 首页
      *

@@ -1,8 +1,14 @@
 package com.szlhsoft.controller;
 
+import com.szlhsoft.core.annotation.Method;
 import com.szlhsoft.core.controller.BaseController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.szlhsoft.model.Storage;
+import com.szlhsoft.service.IStorageService;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
 *@Author: he
@@ -11,8 +17,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 *@Modify
 **/
 public class StorageController extends BaseController {
+    @Resource
+    private IStorageService iStorageService;
+    @RequestMapping(value="/save", method= RequestMethod.POST)
+    @ResponseBody
+    @Method(name="保存")
+    public Object save(Storage storage){
+       return super.save(iStorageService.save(storage));
+    }
     @GetMapping(value = "")
-    public Object search(@RequestParam(value = "pageSize", defaultValue = "10") int page,@RequestParam(value = "currentPage", defaultValue = "1") int limit){
-        return null;
+    public Object search(@RequestParam(value = "pageSize", defaultValue = "10") int pageSize,@RequestParam(value = "currentPage", defaultValue = "1") int currentPage){
+        Map<String,Object> params=new HashMap<>();
+        params.put("pageSize",pageSize);
+        params.put("currentPage",currentPage);
+        return iStorageService.find(params);
     }
 }

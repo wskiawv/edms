@@ -90,4 +90,16 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <delete id="delete" parameterType="java.lang.Integer">
+    delete t_storage where id=#{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteAll">
+    truncate t_storage
+  </delete>
+  <select id="count" resultType="java.lang.Long" parameterType="java.util.HashMap">
+    select count(*) as num from t_storage
+  </select>
+  <select id="find" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+    select * from t_storage
+  </select>
 </mapper>
