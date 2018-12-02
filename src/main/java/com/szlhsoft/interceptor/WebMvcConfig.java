@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
@@ -29,8 +30,8 @@ public class WebMvcConfig {
              */
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(edmsInterceptor);
-                registry.addInterceptor(localeChangeInterceptor());
+                registry.addInterceptor(localeChangeInterceptor()).addPathPatterns("/**");
+                registry.addInterceptor(edmsInterceptor).addPathPatterns("/**");
             }
         };
     }
@@ -41,9 +42,13 @@ public class WebMvcConfig {
      */
     @Bean
     public LocaleResolver cocaleResolver(){
-        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+      /*  SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
         sessionLocaleResolver.setDefaultLocale(Locale.CHINA);
-        return  sessionLocaleResolver;
+        return  sessionLocaleResolver;*/
+        CookieLocaleResolver cookieLocaleResolver=new CookieLocaleResolver();
+        cookieLocaleResolver.setCookieMaxAge(3600);
+        cookieLocaleResolver.setCookieName("language");
+        return cookieLocaleResolver;
     }
 
     /**
