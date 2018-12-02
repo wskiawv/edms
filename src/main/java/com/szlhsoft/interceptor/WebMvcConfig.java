@@ -47,7 +47,7 @@ public class WebMvcConfig {
         return  sessionLocaleResolver;*/
         CookieLocaleResolver cookieLocaleResolver=new CookieLocaleResolver();
         cookieLocaleResolver.setCookieMaxAge(3600);
-        cookieLocaleResolver.setCookieName("language");
+        cookieLocaleResolver.setCookieName("lang");
         return cookieLocaleResolver;
     }
 

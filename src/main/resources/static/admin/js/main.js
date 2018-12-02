@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-angular.module('app').controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', 
-    function($scope,$translate,$localStorage,$window) {
+angular.module('app').controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', '$cookies'
+    function($scope,$translate,$localStorage,$window,$cookies) {
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
       isIE && angular.element($window.document.body).addClass('ie');
@@ -55,10 +55,17 @@ angular.module('app').controller('AppCtrl', ['$scope', '$translate', '$localStor
       // angular translate
       $scope.lang = { isopen: false};
       $scope.langs = {en:'English',cn:'简体中文'};
-      $scope.selectLang = $scope.langs[$translate.proposedLanguage()]||"English";     
+      $scope.selectLang = $scope.langs[$translate.proposedLanguage()]||"English";
+      $cookies.put("lang","zh_CH");
       $scope.setLang = function(langKey, $event) {
         // set the current lang
         $scope.selectLang = $scope.langs[langKey];
+        if($scope.selectLang =='English'){
+            $cookies.put("lang","en_US");
+        }else{
+            $cookies.put("lang","zh_CH");
+        }
+
         // You can change the language during runtime
         $translate.use(langKey);
         $scope.lang.isopen = !$scope.lang.isopen;
