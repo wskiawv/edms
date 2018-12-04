@@ -42,12 +42,12 @@ public class AttachmentServiceImpl implements IAttachmentService {
     }
 
     @Override
-    public List<Attachment> exportData(Map params) {
+    public List<Attachment> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<Attachment> list) {
+    public void input(List<Attachment> list) {
 
     }
 

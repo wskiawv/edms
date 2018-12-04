@@ -27,12 +27,12 @@ public class BaseService implements BaseServiceI {
     }
 
     @Override
-    public List exportData(Map params) {
+    public List output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List list) {
+    public void input(List list) {
 
     }
 

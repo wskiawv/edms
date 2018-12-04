@@ -14,8 +14,8 @@ public interface BaseServiceI<T> {
     Page search(Map params);
     PageBean<T> find(Map params);
     PageInfo<T> select(Map params);
-    List<T> exportData(Map params);
-    void importData(List<T> list);
+    List<T> output(Map params);
+    void input(List<T> list);
     T save(T o);
     void delete(T o);
     T update(T o);

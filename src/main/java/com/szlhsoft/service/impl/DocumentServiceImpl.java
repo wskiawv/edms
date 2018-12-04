@@ -44,12 +44,12 @@ public class DocumentServiceImpl implements IDocumentService {
     }
 
     @Override
-    public List<Document> exportData(Map params) {
+    public List<Document> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<Document> list) {
+    public void input(List<Document> list) {
 
     }
 

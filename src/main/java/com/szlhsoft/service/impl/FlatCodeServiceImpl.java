@@ -58,12 +58,12 @@ public class FlatCodeServiceImpl implements IFlatCodeService {
     }
 
     @Override
-    public List<FlatCode> exportData(Map params) {
+    public List<FlatCode> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<FlatCode> list) {
+    public void input(List<FlatCode> list) {
 
     }
 

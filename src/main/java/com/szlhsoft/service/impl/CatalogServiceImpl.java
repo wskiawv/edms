@@ -43,12 +43,12 @@ public class CatalogServiceImpl implements ICatalogService {
     }
 
     @Override
-    public List<Catalog> exportData(Map params) {
+    public List<Catalog> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<Catalog> list) {
+    public void input(List<Catalog> list) {
 
     }
 

@@ -53,12 +53,12 @@ public class ResourcesServiceImpl implements IResourcesService {
     }
 
     @Override
-    public List<Resources> exportData(Map params) {
+    public List<Resources> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<Resources> list) {
+    public void input(List<Resources> list) {
 
     }
 

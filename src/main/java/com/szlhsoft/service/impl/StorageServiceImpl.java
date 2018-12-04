@@ -64,12 +64,12 @@ public class StorageServiceImpl implements IStorageService {
     }
 
     @Override
-    public List<Storage> exportData(Map params) {
+    public List<Storage> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<Storage> list) {
+    public void input(List<Storage> list) {
 
     }
 

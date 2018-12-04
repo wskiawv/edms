@@ -42,12 +42,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> exportData(Map params) {
+    public List<User> output(Map params) {
         return null;
     }
 
     @Override
-    public void importData(List<User> list) {
+    public void input(List<User> list) {
 
     }
 
