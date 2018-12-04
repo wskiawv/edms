@@ -1,5 +1,6 @@
 package com.szlhsoft.core.service;
 
+import com.github.pagehelper.PageInfo;
 import com.szlhsoft.core.model.Page;
 import com.szlhsoft.core.model.PageBean;
 
@@ -12,6 +13,7 @@ import java.util.Map;
 public interface BaseServiceI<T> {
     Page search(Map params);
     PageBean<T> find(Map params);
+    PageInfo<T> select(Map params);
     List<T> exportData(Map params);
     void importData(List<T> list);
     T save(T o);

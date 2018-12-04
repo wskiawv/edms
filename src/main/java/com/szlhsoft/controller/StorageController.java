@@ -42,11 +42,20 @@ public class StorageController extends BaseController {
         }
        return message;
     }
-    @GetMapping(value = "")
+    @GetMapping(value = "/search")
+    @ResponseBody
     public Object search(@RequestParam(value = "pageSize", defaultValue = "10") int pageSize,@RequestParam(value = "currentPage", defaultValue = "1") int currentPage){
         Map<String,Object> params=new HashMap<>();
         params.put("pageSize",pageSize);
         params.put("currentPage",currentPage);
         return iStorageService.find(params);
+    }
+    @GetMapping(value = "/select")
+    @ResponseBody
+    public Object select(@RequestParam(value = "pageSize", defaultValue = "10") int pageSize,@RequestParam(value = "currentPage", defaultValue = "1") int currentPage){
+        Map<String,Object> params=new HashMap<>();
+        params.put("pageSize",pageSize);
+        params.put("currentPage",currentPage);
+        return iStorageService.select(params);
     }
 }

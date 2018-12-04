@@ -102,4 +102,23 @@
   <select id="find" resultMap="BaseResultMap" parameterType="java.util.HashMap">
     select * from t_storage
   </select>
+  <select id="select" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_storage
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="pageSize != null">
+      <if test="currentPage != null">
+        limit ${currentPage}, ${pageSize}
+      </if>
+      <if test="currentPage == null">
+        limit ${pageSize}
+      </if>
+    </if>
+  </select>
 </mapper>

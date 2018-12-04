@@ -1,11 +1,15 @@
 package com.szlhsoft.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.szlhsoft.core.model.Page;
 import com.szlhsoft.core.model.PageBean;
+import com.szlhsoft.dao.FlatCodeMapper;
 import com.szlhsoft.model.FlatCode;
 import com.szlhsoft.service.IFlatCodeService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 /**
@@ -16,6 +20,8 @@ import java.util.Map;
 **/
 @Service
 public class FlatCodeServiceImpl implements IFlatCodeService {
+    @Resource
+    private FlatCodeMapper flatCodeDao;
     @Override
     public void initFlatCode() {
 
@@ -39,6 +45,16 @@ public class FlatCodeServiceImpl implements IFlatCodeService {
     @Override
     public PageBean<FlatCode> find(Map params) {
         return null;
+    }
+
+    @Override
+    public PageInfo<FlatCode> select(Map params) {
+        Integer pageSize= (Integer) params.get("pageSize");
+        Integer page= (Integer) params.get("currentPage");
+        PageHelper.startPage(page, pageSize);
+        List<FlatCode> list=flatCodeDao.select(params);
+        PageInfo<FlatCode> pageInfo=new PageInfo<>(list);
+        return pageInfo;
     }
 
     @Override

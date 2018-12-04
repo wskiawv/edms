@@ -1,10 +1,14 @@
 package com.szlhsoft.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.szlhsoft.core.model.Page;
 import com.szlhsoft.core.model.PageBean;
+import com.szlhsoft.dao.UserMapper;
 import com.szlhsoft.model.User;
 import com.szlhsoft.service.IUserService;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +19,8 @@ import java.util.Map;
 *@Modify
 **/
 public class UserServiceImpl implements IUserService {
+    @Resource
+    private UserMapper userDao;
     @Override
     public Page search(Map params) {
         return null;
@@ -23,6 +29,16 @@ public class UserServiceImpl implements IUserService {
     @Override
     public PageBean<User> find(Map params) {
         return null;
+    }
+
+    @Override
+    public PageInfo<User> select(Map params) {
+        Integer pageSize = (Integer) params.get("pageSize");
+        Integer page = (Integer) params.get("currentPage");
+        PageHelper.startPage(page, pageSize);
+        List<User>list = userDao.select(params);
+        PageInfo<User> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     @Override

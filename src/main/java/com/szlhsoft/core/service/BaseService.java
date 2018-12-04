@@ -1,5 +1,6 @@
 package com.szlhsoft.core.service;
 
+import com.github.pagehelper.PageInfo;
 import com.szlhsoft.core.model.Page;
 import com.szlhsoft.core.model.PageBean;
 
@@ -17,6 +18,11 @@ public class BaseService implements BaseServiceI {
 
     @Override
     public PageBean find(Map params) {
+        return null;
+    }
+
+    @Override
+    public PageInfo select(Map params) {
         return null;
     }
 
