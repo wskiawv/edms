@@ -55,21 +55,23 @@ public class DocumentServiceImpl implements IDocumentService {
 
     @Override
     public Document save(Document o) {
-        return null;
+        documentDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(Document o) {
-
+        documentDao.delete(o);
     }
 
     @Override
     public Document update(Document o) {
+        documentDao.update(o);
         return null;
     }
 
     @Override
     public void delete(Integer id) {
-
+        documentDao.deleteByPrimaryKey(id);
     }
 }

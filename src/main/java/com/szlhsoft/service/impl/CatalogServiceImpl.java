@@ -54,21 +54,23 @@ public class CatalogServiceImpl implements ICatalogService {
 
     @Override
     public Catalog save(Catalog o) {
-        return null;
+        catalogDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(Catalog o) {
-
+        catalogDao.delete(o);
     }
 
     @Override
     public Catalog update(Catalog o) {
-        return null;
+        catalogDao.update(o);
+        return o;
     }
 
     @Override
     public void delete(Integer id) {
-
+        catalogDao.deleteByPrimaryKey(id);
     }
 }

@@ -69,21 +69,23 @@ public class FlatCodeServiceImpl implements IFlatCodeService {
 
     @Override
     public FlatCode save(FlatCode o) {
-        return null;
+        flatCodeDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(FlatCode o) {
-
+        flatCodeDao.delete(o);
     }
 
     @Override
     public FlatCode update(FlatCode o) {
-        return null;
+        flatCodeDao.update(o);
+        return o;
     }
 
     @Override
     public void delete(Integer id) {
-
+        flatCodeDao.deleteByPrimaryKey(id);
     }
 }

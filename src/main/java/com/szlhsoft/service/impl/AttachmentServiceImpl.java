@@ -53,21 +53,23 @@ public class AttachmentServiceImpl implements IAttachmentService {
 
     @Override
     public Attachment save(Attachment o) {
-        return null;
+        attachmentDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(Attachment o) {
-
+        attachmentDao.delete(o);
     }
 
     @Override
     public Attachment update(Attachment o) {
-        return null;
+        attachmentDao.update(o);
+        return o;
     }
 
     @Override
     public void delete(Integer id) {
-
+        attachmentDao.deleteByPrimaryKey(id);
     }
 }

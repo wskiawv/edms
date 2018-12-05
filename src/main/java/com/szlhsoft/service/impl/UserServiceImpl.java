@@ -53,21 +53,23 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User save(User o) {
-        return null;
+        userDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(User o) {
-
+        userDao.delete(o);
     }
 
     @Override
     public User update(User o) {
+        userDao.updateByPrimaryKey(o);
         return null;
     }
 
     @Override
     public void delete(Integer id) {
-
+        userDao.deleteByPrimaryKey(id);
     }
 }

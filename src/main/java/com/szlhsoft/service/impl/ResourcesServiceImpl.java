@@ -64,21 +64,23 @@ public class ResourcesServiceImpl implements IResourcesService {
 
     @Override
     public Resources save(Resources o) {
-        return null;
+        resourcesDao.insertSelective(o);
+        return o;
     }
 
     @Override
     public void delete(Resources o) {
-
+        resourcesDao.delete(o);
     }
 
     @Override
     public Resources update(Resources o) {
-        return null;
+        resourcesDao.update(o);
+        return o;
     }
 
     @Override
     public void delete(Integer id) {
-
+        resourcesDao.deleteByPrimaryKey(id);
     }
 }
